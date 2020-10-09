@@ -14,7 +14,4 @@ public interface Api {
             @Query("count") int count,
             @Query("type") String type
     );
-//    @GET("getJoke?page=1&count=2&type=video")
-//    LiveData<GetJoke> getJokeText(
-//    );
 }
