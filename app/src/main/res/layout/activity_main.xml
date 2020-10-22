@@ -1,40 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
-        <variable
-            name="joke"
-            type="com.example.mvvmgithub.model.GetJoke.ResultBean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/text"
+        <Button
+            android:id="@+id/LiveData_bt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{joke.text,default=fa}"
-            android:textSize="20sp"
+            android:text="跳转LiveData登录界面"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            android:textAllCaps="false"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/name"
+        <Button
+            android:id="@+id/observableFieldButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="@{joke.name,default=dafa}"
+            android:layout_marginTop="20dp"
+            android:text="跳转ObservableField登录界面"
             app:layout_constraintLeft_toLeftOf="parent"
+            android:textAllCaps="false"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text" />
+            app:layout_constraintTop_toBottomOf="@id/LiveData_bt" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

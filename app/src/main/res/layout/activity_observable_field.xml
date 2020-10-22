@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="observableFieldViewModel"
+            type="com.example.mvvmgithub.viewmodel.ObservableFieldViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.PsdLoginActivity">
+
+        <TextView
+            android:id="@+id/psd_enter_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="40dp"
+            android:text="密码登录"
+            android:textColor="#39393b"
+            android:textSize="28sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/psd_nickname_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="36dp"
+            android:hint="请输入账号"
+            android:text="@={observableFieldViewModel.nickName}"
+            android:textColor="#39393b"
+            android:textColorHint="#cfd2d7"
+            android:textSize="16sp"
+            android:theme="@style/MyEditTest"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/psd_enter_tv" />
+
+
+        <EditText
+            android:id="@+id/psd_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginRight="36dp"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:maxLength="11"
+            android:text="@={observableFieldViewModel.password}"
+            android:textColor="#39393b"
+            android:textColorHint="#cfd2d7"
+            android:textSize="16sp"
+            android:theme="@style/MyEditTest"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/psd_nickname_edit" />
+
+
+        <Button
+            android:id="@+id/achieve_sms_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginRight="36dp"
+            android:background="#22a888"
+            android:text="登录"
+            android:textColor="#ffffff"
+            app:layout_constraintTop_toBottomOf="@id/psd_edit" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyEditTest" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#e7e4e4</item>
+        <item name="colorControlActivated">#e7e4e4</item>
+    </style>
+
 </resources>
