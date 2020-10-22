@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitManager {
     //服务器请求baseUrl
-    private static String sBaseUrl = null;
+    private static String sBaseUrl = Constants.SERVER_URL;
 
     //超时时长 默认10s
     private static int sConnectTimeout = 10;

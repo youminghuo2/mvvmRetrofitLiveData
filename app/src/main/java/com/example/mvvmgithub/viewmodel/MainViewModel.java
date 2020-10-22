@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.mvvmgithub.api.Api;
+import com.example.mvvmgithub.api.ApiResponse;
 import com.example.mvvmgithub.api.ApiService;
 import com.example.mvvmgithub.model.GetJoke;
 import com.example.mvvmgithub.retrofit.Constants;
@@ -17,7 +18,8 @@ public class MainViewModel extends AndroidViewModel {
 
     public MainViewModel(@NonNull Application application) {
         super(application);
-        liveDataGetJoke = ApiService.create(Constants.SERVER_URL, Api.class).getJokeText(1,1,"video");
+
+        liveDataGetJoke = ApiService.create(Api.class).getJokeText(1,1,"video");
     }
 
     public LiveData<GetJoke> getJokeLiveData() {
