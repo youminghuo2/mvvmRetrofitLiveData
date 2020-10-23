@@ -19,7 +19,6 @@ import com.example.mvvmgithub.model.LiveDataLoginModel;
 import com.example.mvvmgithub.viewmodel.LiveDataViewModel;
 
 public class LiveDataActivity extends AppCompatActivity {
-    private Context mContext;
     private ActivityLiveDataBinding activityLiveDataBinding;
     private LiveDataViewModel liveDataViewModel;
 
@@ -27,14 +26,16 @@ public class LiveDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityLiveDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_live_data);
-        mContext = getApplicationContext();
+        //通过ViewModelProvider得到ViewModel
         liveDataViewModel = new ViewModelProvider(this).get(LiveDataViewModel.class);
         activityLiveDataBinding.setLiveDataViewModel(liveDataViewModel);
         LiveDataMonitor();
     }
 
     private void LiveDataMonitor() {
+        //得到ViewModel中的LiveData
         final MutableLiveData<LiveDataLoginModel> liveData = liveDataViewModel.getLoginModelMutableLiveData();
+        //liveData.observe()观察ViewModel中数据的变化
         liveData.observe(this, new Observer<LiveDataLoginModel>() {
             @Override
             public void onChanged(LiveDataLoginModel liveDataLoginModel) {
@@ -58,6 +59,9 @@ public class LiveDataActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
+
+
+
+
