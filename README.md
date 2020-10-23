@@ -1,2 +1,3 @@
 # mvvmRetrofit
 retorfit+livedata封装
+分别用LiveData和ObservableField双向绑定实现app登录功能
